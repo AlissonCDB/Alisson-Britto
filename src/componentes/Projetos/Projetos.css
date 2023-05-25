@@ -1,0 +1,35 @@
+.conhecimento{
+    margin: 35px;
+}
+
+.conhecimento h5 {
+    margin: 5px;
+}
+
+.conhecimento p {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    width: 234px;
+}
+
+.conhecimento ul {
+    text-align: center;
+    padding: 20px 0px;
+    border-radius: 50px;
+    background-color: #0c0c0c;
+}
+
+.conhecimento li{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+@media screen and (min-width: 920px) {
+    .conhecimento ul{
+        display: flex;
+        justify-content: space-around;
+    }
+
+}

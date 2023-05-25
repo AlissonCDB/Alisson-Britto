@@ -1,0 +1,98 @@
+/* Cabeçalho */
+.banner_box {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    color: #cfb072;
+    background-color: black;
+
+    background-image: url('/public/images/logo.jpeg');
+    background-repeat: no-repeat;
+    height: 125px;
+}
+
+.banner_informacoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 125px;
+}
+
+#logo_mais {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-color: black;
+}
+
+.informacoes {
+    text-align: center;
+
+}
+
+#minha_foto {
+    margin: 17.5px 17.5px 17.5px 35px;
+    width: 90px;
+    height: 90px;
+    border-radius: 90%;
+}
+
+#meu_nome {
+    font-size: 24px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    width: 150px;
+    margin: 50px;
+}
+
+@media screen and (max-width: 720px) {
+    #contatos {
+        display: none;
+    }
+
+    .tela_cheia {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 721px) {
+    .banner_box {
+        height: 250px;
+    }
+    
+    .banner_informacoes {
+        height: 250px;
+    }
+
+    #logo_mais{
+        display: none;
+    }
+
+    #minha_foto {
+        width: 150px;
+        height: 150px;
+    }
+
+    #meu_nome {
+        font-size: 36px;
+        width: 300px;
+    }
+
+    .button_link {
+        display: none;
+    }
+
+}
+
+.button_link {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    border: none;
+    width: 100%;
+    padding: 8px 0;
+}

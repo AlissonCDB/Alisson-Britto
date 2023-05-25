@@ -1,0 +1,21 @@
+.experiencia_box, .experiencias_profissionais{
+    text-align: center;
+    margin: 35px;
+    padding: 15px;
+    background-color: #0c0c0c;
+    border-radius: 50px;
+}
+
+.experiencia_box p {
+    padding: 5px 30px;
+}
+
+@media screen and (min-width: 721px){
+    .experiencia_box, .experiencias_profissionais {
+        margin: 35px 20% ;
+    }
+
+    .experiencia_box p {
+        padding: 5px 10%;
+    }
+}

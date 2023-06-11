@@ -1,44 +1,50 @@
-import './InformacoesContato.css'
+import { styled } from 'styled-components'
+import { InformacoesContatoAdicionais } from '../InformacoesContatoAdicionais'
+
+import emailIcone from '../Imagens/Gmail-icone-30.png'
+import telefoneIcone from '../Imagens/Telefone-icone-30.png'
+
+
+const InformacoesContatoContainer = styled.div`
+
+`
+const EmailTelefone = styled.ul`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: #cfb072;
+    background-color: black;
+    text-align: center;
+    padding: 16px 0;
+
+    @media screen and (min-width: 720px){
+        display: none;
+    }
+`
+const Contatos = styled.li`
+    width: 45%;
+    p{
+        margin: 0;
+    }
+`
 
 export const InformacoesContato = () => {
     return (
-        <div className='informacoes_container'>
+        <InformacoesContatoContainer>
 
-            <div className='informacoes_de_contato_box'>
-                <p className='contatos'>
-                    <img src='images\icons8-gmail-30.png'></img>
-                    <br />
-                    alissoncdbritto@gmail.com
-                </p>
-                <p className='contatos'>
-                    <img src='images\icons8-volume-da-campainha-30.png'></img>
-                    <br />
-                    (42) 9 9920-2232
-                </p>
-            </div>
-            <div className='informacoes_adicionais_box'>
-                <p className='informacoes_adicionais'>
-                    <img src='images\icons8-pontos-de-interesse-30.png'></img>
-                    <br />
-                    Rio Bonito do Iguaçu - PR
-                    <br />
-                    Indaiatuba - SP
-                </p>
-                <p className='informacoes_adicionais'>
-                    <a href='https://github.com/AlissonCDB'>
-                        <img src='images\icons8-github-30.png'></img>
-                        <br />
-                        AlissonCDB
-                    </a>
-                </p>
-                <p className='informacoes_adicionais'>
-                    <a href='https://www.linkedin.com/in/alisson-cunha-de-britto-715a52270/'>
-                        <img src='images\icons8-linkedin-30.png'></img>
-                        <br />
-                        Alisson Cunha de Britto
-                    </a>
-                </p>
-            </div>
-        </div>
+            <EmailTelefone>
+                <Contatos>
+                    <img src={emailIcone} />
+                    <p>alissoncdbritto@gmail.com</p>
+                </Contatos>
+                <Contatos>
+                    <img src={telefoneIcone} />
+                    <p>(42) 9 9920-2232</p>
+                </Contatos>
+            </EmailTelefone>
+
+            <InformacoesContatoAdicionais />
+
+        </InformacoesContatoContainer>
     )
 }

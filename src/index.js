@@ -1,44 +1,59 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import reportWebVitals from './reportWebVitals'
 
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+import { Footer } from './componentes/Footer';
+import { Header } from './componentes/rotas/Header';
+import { Skills } from './componentes/rotas/Skills'
+import { Home } from './componentes/rotas/Home'
+import { Projetos } from './componentes/rotas/Projetos';
 
-import './index.css';
-import { Cabecalho } from './componentes/Cabecalho';
-import { Experiencias } from './componentes/Experiencias';
-import { InformacoesContato } from './componentes/InformacoesContato';
-import { Projetos } from './componentes/Projetos';
-import { Copyright } from './componentes/Copyright';
+const GlobalStyle = createGlobalStyle`
+  html {
+    background-color: black;
+    color: #cfb072;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+`
 
 const App = () => {
-  const [valor, setValor] = useState(false);
-
-  const handleClick = () => {
-    setValor(!valor);
-  };
-
   return (
     <React.StrictMode>
-      <Cabecalho />
-      <nav id='logo_mais'>
-        <button className="button_link" onClick={handleClick}>
-          {valor ? true : false}
-          {!valor && <img src='images/icons8-volume-da-campainha-30.png' alt='Ícone Campainha' />}
-          {!valor && <img src='images/icons8-gmail-30.png' alt='Ícone Gmail' />}
-          {!valor && <img src='images/icons8-pontos-de-interesse-30.png' alt='Ícone Pontos de Interesse' />}
-          {!valor && <a href='https://github.com/AlissonCDB'> <img src='images/icons8-github-30.png' alt='Ícone GitHub' /></a>}
-          {!valor && <a href='https://www.linkedin.com/in/alisson-cunha-de-britto-715a52270/'><img src='images/icons8-linkedin-30.png' alt='Ícone LinkedIn' /></a>}
-          {!valor && <img src='images/icons8-mais-30.png' alt='Ícone Mais' />}
-          {valor && <img src="images/icons8-menos-30.png" alt='Ícone Menos' />}
-        </button>
-        {valor && <InformacoesContato />}
-      </nav>
-      <nav className="tela_cheia">
-        <InformacoesContato />
-      </nav>
-      <Experiencias />
-      <Projetos />
-      <Copyright />
+      <GlobalStyle />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/skills' element={<Skills />} />
+          <Route path='/projetos' element={<Projetos />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </React.StrictMode>
   );
 };

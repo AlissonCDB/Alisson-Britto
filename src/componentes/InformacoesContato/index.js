@@ -38,8 +38,10 @@ export const InformacoesContato = () => {
                     <p>alissoncdbritto@gmail.com</p>
                 </Contatos>
                 <Contatos>
-                    <img src={telefoneIcone} />
-                    <p>(42) 9 9920-2232</p>
+                    <a href='https://wa.me/5542999202232'>
+                        <img src={telefoneIcone} />
+                        <p>Entre em contato!</p>
+                    </a>
                 </Contatos>
             </EmailTelefone>
 

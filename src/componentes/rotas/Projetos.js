@@ -32,8 +32,8 @@ export const Projetos = () => {
                 </DescricaoProjetos>
                 <DescricaoProjetos>
                     <p>"Anime Sinopse" é um projeto feito em React.js, onde além de desenvolver 
-                        minhas habilidades de HTML, CSS e JavaScript, também usei uma API para 
-                        adicionar um protótipo "de Banco de Dados" e torná-lo editável sem 
+                        minhas habilidades de HTML, CSS e JavaScript, também estou estudando como
+                        adicionar uma API como protótipo de "Banco de Dados" e torná-lo editável sem 
                         precisar alterar o código.
                     </p>
                     <p>Se você quiser ver melhor o projeto, você pode acessar <a href="https://anime-sinopse.vercel.app/">Anime Sinopse</a>. 

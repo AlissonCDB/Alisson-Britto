@@ -1,6 +1,6 @@
 import { styled } from "styled-components"
 import React from "react"
-import videoAnimeSinopse from "../Videos/Anime-Sinopse.mp4"
+import videoAnimeSinopse from "../videos/Anime-Sinopse.mp4"
 const ProjetosContainer = styled.div`
     display: flex;
     flex-direction: column;

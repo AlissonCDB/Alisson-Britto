@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import { styled } from 'styled-components'
-import { Cabecalho } from "../Cabecalho"
-import { InformacoesContato } from "../InformacoesContato"
-import { Botao } from '../Botao'
+import { Cabecalho } from "../componentes/Cabecalho"
+import { InformacoesContato } from "../componentes/InformacoesContato"
+import { Botao } from '../componentes/Botao'
 
-import emailIcone from '../Imagens/Gmail-icone-30.png'
-import githubIcone from '../Imagens/GitHub-icone-30.png'
-import localizacaoIcone from '../Imagens/Localizacao-icone-30.png'
-import telefoneIcone from '../Imagens/Telefone-icone-30.png'
-import linkedinIcone from '../Imagens/Linkedin-icone-30.png'
-import maisIcone from '../Imagens/Mostrar-mais-icone-30.png'
-import menosIcone from '../Imagens/Mostrar-menos-icone-30.png'
-
+import emailIcone from '../imagens/Gmail-icone-30.png'
+import githubIcone from '../imagens/GitHub-icone-30.png'
+import localizacaoIcone from '../imagens/Localizacao-icone-30.png'
+import whatsappIcone from '../imagens/Whatsapp-icone-30.png'
+import linkedinIcone from '../imagens/Linkedin-icone-30.png'
+import maisIcone from '../imagens/Mostrar-mais-icone-30.png'
+import menosIcone from '../imagens/Mostrar-menos-icone-30.png'
 
 const linkGitHub = 'https://github.com/AlissonCDB';
 const linkLinkedin = 'https://www.linkedin.com/in/alisson-cunha-de-britto-715a52270/';
+const linkWhatsapp = 'https://wa.me/5542999202232'
 
 const CabecalhoContainer = styled.div``
 const InformacoesTelaMobile = styled.div`
@@ -46,7 +46,7 @@ export const Header = () => {
 
         <Botao onClick={handleClick}>
           {valor ? true : false}
-          {!valor && <img src={telefoneIcone} alt='Ícone telefone ' />}
+          {!valor && <a href={linkWhatsapp}><img src={whatsappIcone}alt='Íconetelefone ' /> </a>}
           {!valor && <img src={emailIcone} alt='Ícone Gmail' />}
           {!valor && <img src={localizacaoIcone} alt='Ícone localização' />}
           {!valor && <a href={linkGitHub}> <img src={githubIcone} alt='Ícone GitHub' /> </a>}
@@ -56,14 +56,12 @@ export const Header = () => {
         </Botao>
 
         {valor && <InformacoesContato />}
-
       </InformacoesTelaMobile>
 
       <InformacoesTelaDesktop>
-
         <InformacoesContato />
-
       </InformacoesTelaDesktop>
+
     </CabecalhoContainer>
   )
 }

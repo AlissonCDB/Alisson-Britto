@@ -23,13 +23,12 @@ const Opcoes = styled.li`
             font-size: 18px;
         }
     }
-    a:link, a:visited, a:active, a:hover {
+    a:link, a:visited, a:active {
         text-decoration: none;
         color: #cfb072;
     }
+
 `
-
-
 export const OpcoesPaginas = () => {
     return (
         <OpcoesPaginasContainer>

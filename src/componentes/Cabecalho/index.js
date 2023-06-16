@@ -1,12 +1,14 @@
 import { styled } from 'styled-components'
+import { Link } from 'react-router-dom'
 import { MinhaFoto } from './MinhaFoto'
 import { MeuNome } from './MeuNome'
-import { Contatos } from './Contatos'
 import { OpcoesPaginas } from '../OpcoesPaginas'
+import { Contatos } from '../Contatos'
 
-import minhaFoto from '../Imagens/Minha-foto.jpeg'
-import Logo from '../Imagens/Logo.jpeg'
-import { Link } from 'react-router-dom'
+import minhaFoto from '../../imagens/Minha-foto.jpeg'
+import Logo from '../../imagens/Logo.jpeg'
+
+let tamanho = 100 / 3;
 
 
 const CabecalhoContainer = styled.header` 
@@ -27,6 +29,9 @@ const CabecalhoContainer = styled.header`
         text-decoration: none;
         color: #cfb072;
     }
+    a:hover{
+        color: white;
+    }
 `
 const ItensCabecalho = styled.ul`
     display: flex;
@@ -39,33 +44,48 @@ const ItensCabecalho = styled.ul`
         height: 250px;
     }
 `
+const DisplayLink = styled.div`
+    @media screen and (min-width: 720px){
+        display: flex;
+        aling-items: center;
+        justify-content: center;
+        width: ${tamanho}%;
+    }
+`
+const DisplayContato = styled.div`
+    display: none;
 
+    @media screen and (min-width: 720px){
+        display: inline;
+        width: ${tamanho}%;
+    }
+`
 export const Cabecalho = () => {
 
     return (
         <CabecalhoContainer>
             <ItensCabecalho>
-                <Link to={'/'}>
-                    <MinhaFoto>
-                        <img src={minhaFoto} alt='Minha foto' />
-                    </MinhaFoto>
-                </Link>
-                <Link to={'/'}>
-                    <MeuNome>
-                        Alisson Cunha de Britto
-                    </MeuNome>
-                </Link>
-                <Contatos>
-                    <p>
-                        Email: <br /> alissoncdbritto@gmail.com
-                    </p>
-                    <p>
-                        Telefone: <br /> (42) 9 9920-2232
-                    </p>
-                </Contatos>
+                <DisplayLink>
+                    <Link>
+                        <MinhaFoto >
+                            <img src={minhaFoto} alt='Minha foto' />
+                        </MinhaFoto>
+                    </Link>
+                </DisplayLink>
+                <DisplayLink>
+                    <Link to={'/'}>
+                        <MeuNome >
+                            Alisson Cunha de Britto
+                        </MeuNome>
+                    </Link>
+                </DisplayLink>
+
+                <DisplayContato>
+                    <Contatos />
+                </DisplayContato>
             </ItensCabecalho>
             <OpcoesPaginas />
-        </CabecalhoContainer>
+        </CabecalhoContainer >
 
     )
 }

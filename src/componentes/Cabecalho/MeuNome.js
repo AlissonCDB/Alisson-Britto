@@ -6,7 +6,7 @@ export const MeuNome = styled.p`
     font-family: sans-serif;
     text-transform: uppercase;
     width: 150px;
-    margin: 50px;
+    margin: 0;
 
     @media screen and (min-width: 720px) {
         font-size: 36px;

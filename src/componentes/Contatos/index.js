@@ -37,8 +37,10 @@ const ContatosContainer = styled.ul`
     }
 `
 const Contato = styled.li`
-    padding: 8px 0;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     @media screen and (min-width: 720px){
         display: flex;
         flex-direction: row;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { styled } from 'styled-components'
 import { Cabecalho } from "../componentes/Cabecalho"
 import { InformacoesContato } from "../componentes/InformacoesContato"
@@ -17,8 +17,8 @@ const linkLinkedin = 'https://www.linkedin.com/in/alisson-cunha-de-britto-715a52
 const linkWhatsapp = 'https://wa.me/5542999202232'
 
 const CabecalhoContainer = styled.div`
-  border-bottom: 2px solid #cfb072;
-  box-shadow: 0px 6px 10px rgba(207, 176, 72, 0.5);
+  border-bottom: ${props => props.borda || '2px solid #cfb072'};
+  box-shadow: ${props => props.sombra || '0px 6px 10px rgba(207, 176, 72, 0.5)'};
 `
 const InformacoesTelaMobile = styled.div`
   display: flex;
@@ -38,13 +38,28 @@ const InformacoesTelaDesktop = styled.div`
 `
 export const Header = () => {
   const [valor, setValor] = useState(false);
+  const [borderOn, setBorderOn] = useState(false);
 
   const handleClick = () => {
     setValor(!valor);
   };
 
+  useEffect(() =>{
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      const isScreenLarge = window.innerWidth >= 720;
+      setBorderOn(scrollTop > (valor ? (isScreenLarge ? 352 : 346) : (isScreenLarge ? 352 : 169)));
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [valor])
+
   return (
-    <CabecalhoContainer>
+    <CabecalhoContainer
+      borda={borderOn && 'none'}
+      sombra={borderOn && 'none'}
+    >
       <Cabecalho valor={valor} />
       <InformacoesTelaMobile>
 

@@ -15,18 +15,27 @@ const InformacoesContatoAdicionaisContainer = styled.ul`
     background-color: black;
     text-align: center;
     padding: 16px 0;
+    
 `
 const LocalizacaoGitHubLinkedin = styled.li`
     width: ${tamanho}%;
+    padding: 0 5px;
     p{
         margin: 0;
     }
     a:link, a:visited, a:active {
         text-decoration: none;
-        color: #cfb072;
+        color: blue;
     }
-    a:hover {
-        color: white;
+
+    @media screen and (min-width: 720px){
+        padding: 0;
+        a:link, a:visited, a:active {;
+            color: #cfb072;
+        }
+        a:hover {
+            color: blue;
+        }
     }
 `
 

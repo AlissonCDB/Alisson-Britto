@@ -16,12 +16,16 @@ const linkGitHub = 'https://github.com/AlissonCDB';
 const linkLinkedin = 'https://www.linkedin.com/in/alisson-cunha-de-britto-715a52270/';
 const linkWhatsapp = 'https://wa.me/5542999202232'
 
-const CabecalhoContainer = styled.div``
+const CabecalhoContainer = styled.div`
+  border-bottom: 2px solid #cfb072;
+  box-shadow: 0px 6px 10px rgba(207, 176, 72, 0.5);
+`
 const InformacoesTelaMobile = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   background-color: black;
+  
   @media screen and (min-width: 720px) {
     display: none;
   }
@@ -41,7 +45,7 @@ export const Header = () => {
 
   return (
     <CabecalhoContainer>
-      <Cabecalho />
+      <Cabecalho valor={valor} />
       <InformacoesTelaMobile>
 
         <Botao onClick={handleClick}>

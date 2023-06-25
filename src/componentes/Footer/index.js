@@ -2,27 +2,37 @@ import { styled } from 'styled-components'
 
 const FooterContainer = styled.p`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: auto;
+    padding: 15px 0;
     margin: 0;
-    font-size: 18px;
     font-style: italic;
     font-weight: bolder;
     background-color: #0c0c0c;
 
-    @media screen and (min-width: 720px) {
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        height: 100px;
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+    h1, p{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
         font-size: 24px;
+    }
+    p{
+        font-size: 16px;
     }
 `
 
 export const Footer = () => {
     return (
         <FooterContainer>
-            Copyright
+            <h1>Copyright</h1>
+            <p>Desenvolvido por <a href='https://www.instagram.com/alissoncdeb/'>@Alisson Britto</a></p>
         </FooterContainer>
     )
 }

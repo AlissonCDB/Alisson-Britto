@@ -8,9 +8,6 @@ import { Contatos } from '../Contatos'
 import minhaFoto from '../../imagens/Minha-foto.jpeg'
 import Logo from '../../imagens/Logo.jpeg'
 
-let tamanho = 100 / 3;
-
-
 const CabecalhoContainer = styled.header` 
     display: flex;
     flex-direction: column;
@@ -23,14 +20,6 @@ const CabecalhoContainer = styled.header`
 
     @media screen and (min-width: 720px) {
         height: 308px;
-    }
-
-    a:link, a:visited, a:active {
-        text-decoration: none;
-        color: #cfb072;
-    }
-    a:hover{
-        color: white;
     }
 `
 const ItensCabecalho = styled.ul`
@@ -45,11 +34,20 @@ const ItensCabecalho = styled.ul`
     }
 `
 const DisplayLink = styled.div`
+    a:link, a:visited, a:active {
+        text-decoration: none;
+        color: #cfb072;
+    }
+
     @media screen and (min-width: 720px){
         display: flex;
         aling-items: center;
         justify-content: center;
-        width: ${tamanho}%;
+        width: ${100 / 3}%;
+
+        a:hover{
+            color: #cfb072;
+        }
     }
 `
 const DisplayContato = styled.div`
@@ -57,10 +55,10 @@ const DisplayContato = styled.div`
 
     @media screen and (min-width: 720px){
         display: inline;
-        width: ${tamanho}%;
+        width: ${100 / 3}%;
     }
 `
-export const Cabecalho = () => {
+export const Cabecalho = ({valor}) => {
 
     return (
         <CabecalhoContainer>
@@ -84,7 +82,7 @@ export const Cabecalho = () => {
                     <Contatos />
                 </DisplayContato>
             </ItensCabecalho>
-            <OpcoesPaginas />
+            <OpcoesPaginas valor={valor} />
         </CabecalhoContainer >
 
     )

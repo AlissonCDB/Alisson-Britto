@@ -42,7 +42,7 @@ export const Home = () => {
                     </p>
                 </Informacoes>
                 <Informacoes>
-                    <p>Atualmente estou estudando programação.</p>
+                    <p>Atualmente estou trabalhando como freelancer. Mas estou procurando emprego na área de programação. Para mais informações sobre minhas habilidades, acesse minhas skills, projetos e redes sociais.</p>
                 </Informacoes>
             </InformacoesContainer>
 

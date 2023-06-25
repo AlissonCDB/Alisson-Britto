@@ -16,7 +16,7 @@ const ContatosContainer = styled.ul`
     }
     a{
         text-decoration: none;
-        color: #cfb072;
+        color: blue;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -27,12 +27,15 @@ const ContatosContainer = styled.ul`
     @media screen and (min-width: 720px){
         display: flex;
         flex-direction: column;
-
+ 
         p{
             padding-left: 10px;
         }
+        a{
+            color: #cfb072;
+        }
         a:hover{
-            color: white;
+            color: blue;
         }
     }
 `
@@ -41,6 +44,8 @@ const Contato = styled.li`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+
     @media screen and (min-width: 720px){
         display: flex;
         flex-direction: row;
@@ -50,9 +55,6 @@ const Contato = styled.li`
         a{
             display: flex;
             flex-direction: row;
-        }
-        a:hover {
-            color: white;
         }
     }
 `

@@ -15,8 +15,7 @@ const ContatosContainer = styled.ul`
         padding-left: 0;
     }
     a{
-        text-decoration: none;
-        color: blue;
+        color: gold;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -35,7 +34,7 @@ const ContatosContainer = styled.ul`
             color: #cfb072;
         }
         a:hover{
-            color: blue;
+            color: DodgerBlue;
         }
     }
 `
@@ -63,11 +62,11 @@ export const Contatos = () => {
     return(
     <ContatosContainer>
         <Contato>
-            <img src={emailIcone} />  <p>alissoncdbritto@gmail.com</p>
+            <img src={emailIcone} alt="Icone email"/>  <p>alissoncdbritto@gmail.com</p>
         </Contato>
         <Contato>
             <a href='https://wa.me/5542999202232'>
-                <img src={whatsappIcone} /> <p>Entre em contato!</p>
+                <img src={whatsappIcone} alt="Icone whatsapp"/> <p>Entre em contato!</p>
             </a>
         </Contato>
     </ContatosContainer>

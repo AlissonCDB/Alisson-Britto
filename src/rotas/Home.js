@@ -32,51 +32,12 @@ export const Home = () => {
             <InformacoesContainer>
                 <h3>Um pouco sobre minha experiência profissional:</h3>
                 <Informacoes>
-                    <p>Atuei na função de auxiliar administrativo de 2018 a 2019.</p>
+                    <p>Atualmente, estou trabalhando como freelancer, mas estou procurando emprego na área de programação. Para mais informações sobre minhas habilidades, acesse a aba "Skills" e "Projetos" ou meu GitHub e Linkedin.</p>
                 </Informacoes>
                 <Informacoes>
-                    <p>
-                        Na última empresa que trabalhei, desempenhei a função de repositor durante 10
-                        meses até ser promovido a auxiliar administrativo, exercendo o cargo pelo período
-                        de 3 meses até me afastar da empresa por motivos pessoais.
-                    </p>
+                    <p>Outras experiências que já tive foram desempenhar a função de auxiliar administrativo de 2018 a 2019, e mais recentemente, na última empresa em que trabalhei, também atuei na área de auxiliar administrativo.</p>
                 </Informacoes>
-                <Informacoes>
-                    <p>Atualmente estou trabalhando como freelancer. Mas estou procurando emprego na área de programação. Para mais informações sobre minhas habilidades, acesse minhas skills, projetos e redes sociais.</p>
-                </Informacoes>
-            </InformacoesContainer>
 
-            <InformacoesContainer>
-                <Informacoes>
-                    <p>Cargo:</p>
-                    <p>Auxiliar Administrativo</p>
-                </Informacoes>
-                <Informacoes>
-                    <p>Empresa:</p>
-                    <p>Associação Comercial e Empresarial de Rio Bonito do Iguaçu</p>
-                </Informacoes>
-                <Informacoes>
-                    <p>Período:</p>
-                    <p>Maio de 2018 - Fevereiro de 2019</p>
-                </Informacoes>
-            </InformacoesContainer>
-
-            <InformacoesContainer>
-                <Informacoes>
-                    <p>Cargo:</p>
-                    <p>Repositor e Auxiliar Administrativo</p>
-                </Informacoes>
-                <Informacoes>
-                    <p>Empresa:</p>
-                    <p>
-                        R. V. Voznei & CIA LTDA /
-                        Michellen Viau Voznei & CIA LTDA
-                    </p>
-                </Informacoes>
-                <Informacoes>
-                    <p>Período:</p>
-                    <p>Fevereiro de 2022 - Março de 2023</p>
-                </Informacoes>
             </InformacoesContainer>
         </HomeContainer>
     )

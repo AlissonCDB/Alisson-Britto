@@ -1,10 +1,11 @@
 import { styled } from 'styled-components'
 
 const FooterContainer = styled.p`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: fixed;
+    bottom: 0;
+    text-align: center;
+
+    width: 100%;
     height: auto;
     padding: 15px 0;
     margin: 0;
@@ -12,6 +13,7 @@ const FooterContainer = styled.p`
     font-weight: bolder;
     background-color: #0c0c0c;
 
+    
     a{
         text-decoration: none;
         color: inherit;
@@ -21,10 +23,19 @@ const FooterContainer = styled.p`
         padding: 0;
     }
     h1{
-        font-size: 24px;
+        font-size: 16px;
     }
     p{
-        font-size: 16px;
+        font-size: 12px;
+    }
+
+    @media screen and (min-width: 720px){
+        h1{
+            font-size: 22px;
+        }
+        p{
+            font-size: 14px;
+        }
     }
 `
 

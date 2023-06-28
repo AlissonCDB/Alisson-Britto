@@ -24,8 +24,8 @@ const LocalizacaoGitHubLinkedin = styled.li`
         margin: 0;
     }
     a:link, a:visited, a:active {
-        text-decoration: none;
-        color: blue;
+        
+        color: gold;
     }
 
     @media screen and (min-width: 720px){
@@ -34,7 +34,7 @@ const LocalizacaoGitHubLinkedin = styled.li`
             color: #cfb072;
         }
         a:hover {
-            color: blue;
+            color: DodgerBlue;
         }
     }
 `
@@ -44,7 +44,7 @@ export const InformacoesContatoAdicionais = () => {
         <InformacoesContatoAdicionaisContainer>
             <LocalizacaoGitHubLinkedin>
 
-                <img src={localizacaoIcone} />
+                <img src={localizacaoIcone} alt='Icone localização'/>
                 <p>Rio Bonito do Iguaçu - PR</p>
                 <p>Indaiatuba - SP</p>
 
@@ -52,7 +52,7 @@ export const InformacoesContatoAdicionais = () => {
             <LocalizacaoGitHubLinkedin>
 
                 <a href='https://github.com/AlissonCDB'>
-                    <img src={githubIcone} />
+                    <img src={githubIcone} alt='Icone GitHub'/>
                     <p>AlissonCDB</p>
                 </a>
 
@@ -60,7 +60,7 @@ export const InformacoesContatoAdicionais = () => {
             <LocalizacaoGitHubLinkedin>
 
                 <a href='https://www.linkedin.com/in/alisson-cunha-de-britto-715a52270/'>
-                    <img src={LinkedinIcone} />
+                    <img src={LinkedinIcone} alt='Icone Linkedin'/>
                     <p>Alisson Cunha de Britto</p>
                 </a>
 

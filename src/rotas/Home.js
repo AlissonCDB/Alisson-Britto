@@ -1,14 +1,23 @@
 import { styled } from "styled-components"
 
 const HomeContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70vh;
+
     p{
         margin: 0;
         padding: 0 ;
     }
     @media screen and (min-width: 720px){
+        min-height: 55vh;
         p{
             padding: 5px 10%;
         }
+    }
+    @media screen and (min-width: 1080px){
+        min-height: 62vh;
     }
 `
 const InformacoesContainer = styled.ul`

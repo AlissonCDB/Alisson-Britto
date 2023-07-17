@@ -1,16 +1,13 @@
 import { styled } from 'styled-components'
 
 const FooterContainer = styled.p`
-    display: fixed;
-    bottom: 0;
     text-align: center;
 
     width: 100%;
-    height: auto;
     padding: 15px 0;
     margin: 0;
     font-style: italic;
-    font-weight: bolder;
+    font-weight: bold;
     background-color: #0c0c0c;
 
     

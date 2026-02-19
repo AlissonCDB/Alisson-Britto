@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+
 import { Footer } from './componentes/Footer';
 import { Header } from './rotas/Header';
-import { Skills } from './rotas/Skills'
-import { Home } from './rotas/Home'
+import { Skills } from './rotas/Skills';
+import { Home } from './rotas/Home';
 import { Projetos } from './rotas/Projetos';
 
 const GlobalStyle = createGlobalStyle`
@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-`
+`;
 
 const App = () => {
   return (
@@ -50,10 +50,10 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/skills' element={<Skills />} />
-          <Route path='/projetos' element={<Projetos />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/projetos" element={<Projetos />} />
         </Routes>
         <Footer />
       </BrowserRouter>
@@ -61,4 +61,6 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container); 
+root.render(<App />);

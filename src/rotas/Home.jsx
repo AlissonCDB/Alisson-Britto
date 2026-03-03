@@ -1,65 +1,192 @@
-import { styled } from "styled-components"
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
+import { Rocket } from "lucide-react";
 
-const HomeContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 70vh;
-    p{
-        margin: 0;
-        padding: 0 ;
-    }
-    @media screen and (min-width: 720px){
-        min-height: 55vh;
-        p{
-            padding: 5px 10%;
-        }
-    }
-    @media screen and (min-width: 1080px){
-        min-height: 62vh;
-    }
-`
-const InformacoesContainer = styled.ul`
-    text-align: center;
-    margin: 35px;
-    padding: 15px;
-    background-color: #0c0c0c;
-    border-radius: 50px;
+import { menuItems, SOLAR_SYSTEM_CONFIG } from "../componentes/constants.js";
+import { GlobalStyles, StarBackground, CentralSun } from "../componentes/SistemaSolar/ElementosSistemaSolar.jsx";
+import { OrbitingPlanet } from "../componentes/SistemaSolar/OrbitasPlanetas.jsx";
+import { NavigationMenu } from "../componentes/NavigationMenu/index.jsx";
 
-    @media screen and (min-width: 720px){
-        margin: 35px 20%;
-    }
-`
-const Informacoes = styled.li`
+const linkGitHub = 'https://github.com/AlissonCDB';
+import githubIcone from '../imagens/GitHub-icone-30.png'
+
+const ContainerHome = styled.main`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 2000px;
+`;
+
+const RocketButton = styled.button`
+  position: fixed;
+  top: ${props => props.$isMobile ? '20px' : '40px'};
+  right: ${props => props.$isMobile ? '20px' : 'center'}; 
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+`;
+
+const AvisoOverlay = styled.div`
+  display: flex;
+  align-items: flex-start; // Alinha no topo
+  justify-content: flex-start; // Alinha à esquerda
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); // Escurece um pouco o fundo
+  backdrop-filter: blur(5px); // Efeito de desfoque moderno
+  position: fixed; // Garante que fique sobre tudo
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  padding: 20px;
+`;
+
+// Card do Aviso
+const Card = styled.div`
+  width: 90%;
+  max-width: 400px; // Limita o tamanho em telas grandes
+  padding: 25px;
+  background: rgba(75, 129, 129, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  h2 {
     margin-bottom: 15px;
-    h4{
-        margin: 0;
-    }
-`
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+`;
+
+const LinkGitHub = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #00ffff; // Um ciano para destacar no fundo escuro
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+`;
 
 export const Home = () => {
-    return (
-        <HomeContainer>
-            <InformacoesContainer>
-                <h3>Um pouco sobre mim</h3>
-                <Informacoes>
-                    Sou um entusiasta de programação com habilidades em CSS, HTML, React.js, Node.js, Express e MongoDB, e uma paixão por aprender e crescer na área de desenvolvimento de software. Meu objetivo é me tornar um desenvolvedor Full Stack altamente capacitado e contribuir para projetos inovadores.
-                </Informacoes>
-                <Informacoes>
-                    Sou um profissional curioso e atento às últimas tendências e atualizações na minha área de atuação. Acredito que a evolução constante é essencial para enfrentar os desafios tecnológicos de hoje. Estou sempre em busca de novas ferramentas e tecnologias que possam agregar valor aos projetos em que estou envolvido.
-                </Informacoes>
-                <Informacoes>
-                    Estou animado para fazer parte de uma equipe inovadora, onde possa contribuir com minhas habilidades técnicas, criatividade e paixão pela programação. Se você procura um desenvolvedor comprometido em expandir suas habilidades e entregar soluções de alta qualidade, estou pronto para enfrentar novos desafios e crescer junto com a empresa.
-                </Informacoes>
-                <Informacoes>
-                    Vamos juntos construir um futuro tecnológico emocionante!
-                </Informacoes>
-                <Informacoes>
-                    <h4>Experiência:</h4>
-                    Apesar de não possuir experiência profissional na área, tenho dedicado meu tempo ao aprofundamento dos meus conhecimentos em desenvolvimento web e tenho trabalhado em projetos pessoais para aprimorar minhas habilidades técnicas.
-                </Informacoes>
+    const [isPaused, setIsPaused] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [scale, setScale] = useState(1);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-            </InformacoesContainer>
-        </HomeContainer>
-    )
-}
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            setIsMobile(width < 768);
+
+            if (width > 1024) {
+                const scaleW = width / 1080;
+                const scaleH = height / 720;
+                setScale(Math.min(scaleW, scaleH, 1));
+            } else {
+                setScale(1);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    return (
+        <ContainerHome>
+            <AvisoOverlay>
+                <Card>
+                    <h2>Aviso</h2>
+                    <p>
+                        Este portfólio está sendo atualizado, mas você já pode
+                        conferir um pouco da nova temática e acompanhar o progresso. <br />
+                        Enquanto isso que tal, acompanhar um poquinho dos meus repositorios, 
+                        logo logo os links para os projetos estarão disponíveis por aqui!
+                        Recomendo a dar uma olhada no projeto <a href="https://github.com/AlissonCDB/group-leveling">Group Leveling</a>, meu TCC em desenvolvimento.
+                    </p>
+                    <LinkGitHub href={linkGitHub} target="_blank" rel="noopener noreferrer">
+                        <img src={githubIcone} alt="Ícone GitHub" />
+                        <span>Ver Repositórios</span>
+                    </LinkGitHub>
+                </Card>
+            </AvisoOverlay>
+            <GlobalStyles />
+            <StarBackground />
+
+            {/* Menu: Botão de Foguete */}
+            <RocketButton $isMobile={isMobile} onClick={() => setIsMenuOpen(true)}>
+                <motion.div whileHover={{ scale: 1.2, rotate: -45 }} transition={{ type: "spring", stiffness: 300 }}>
+                    <Rocket size={isMobile ? 32 : 24} color="white" />
+                </motion.div>
+            </RocketButton>
+
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <NavigationMenu
+                        items={menuItems}
+                        onClose={() => setIsMenuOpen(false)}
+                    />
+                )}
+            </AnimatePresence>
+
+            {/* Container do Sistema Solar */}
+            <div
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                style={{
+                    position: 'absolute',
+                    width: `100vw`,
+                    height: `100vh`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transform: `rotateX(65deg) scale(${scale})`,
+                    transformStyle: 'preserve-3d',
+                    transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                    pointerEvents: 'all'
+                }}
+            >
+                <CentralSun image={SOLAR_SYSTEM_CONFIG.blackHoleImg} />
+                {menuItems.map((planet) => (
+                    <OrbitingPlanet key={planet.id} planet={planet} isPaused={isPaused} />
+                ))}
+            </div>
+        </ContainerHome>
+    );
+};

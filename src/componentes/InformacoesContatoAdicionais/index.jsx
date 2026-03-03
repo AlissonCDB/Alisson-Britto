@@ -1,7 +1,7 @@
 
-import githubIcone from '../../imagens/GitHub-icone-30.png'
-import localizacaoIcone from '../../imagens/Localizacao-icone-30.png'
-import LinkedinIcone from '../../imagens/Linkedin-icone-30.png'
+import githubIcone from '../../../public/imagens/GitHub-icone-30.png'
+import localizacaoIcone from '../../../public/imagens/Localizacao-icone-30.png'
+import LinkedinIcone from '../../../public/imagens/Linkedin-icone-30.png'
 import { styled } from 'styled-components'
 
 let tamanho = 100/3;

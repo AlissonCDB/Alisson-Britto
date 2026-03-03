@@ -9,7 +9,7 @@ import { OrbitingPlanet } from "../componentes/SistemaSolar/OrbitasPlanetas.jsx"
 import { NavigationMenu } from "../componentes/NavigationMenu/index.jsx";
 
 const linkGitHub = 'https://github.com/AlissonCDB';
-import githubIcone from '../imagens/GitHub-icone-30.png'
+import githubIcone from '../../public/imagens/GitHub-icone-30.png'
 
 const ContainerHome = styled.main`
   position: relative;

@@ -4,13 +4,13 @@ import { Cabecalho } from "../componentes/Cabecalho"
 import { InformacoesContato } from "../componentes/InformacoesContato"
 import { Botao } from '../componentes/Botao'
 
-import emailIcone from '../imagens/Gmail-icone-30.png'
-import githubIcone from '../imagens/GitHub-icone-30.png'
-import localizacaoIcone from '../imagens/Localizacao-icone-30.png'
-import whatsappIcone from '../imagens/Whatsapp-icone-30.png'
-import linkedinIcone from '../imagens/Linkedin-icone-30.png'
-import maisIcone from '../imagens/Mostrar-mais-icone-30.png'
-import menosIcone from '../imagens/Mostrar-menos-icone-30.png'
+import emailIcone from '../../public/imagens/Gmail-icone-30.png'
+import githubIcone from '../../public/imagens/GitHub-icone-30.png'
+import localizacaoIcone from '../../public/imagens/Localizacao-icone-30.png'
+import whatsappIcone from '../../public/imagens/Whatsapp-icone-30.png'
+import linkedinIcone from '../../public/imagens/Linkedin-icone-30.png'
+import maisIcone from '../../public/imagens/Mostrar-mais-icone-30.png'
+import menosIcone from '../../public/imagens/Mostrar-menos-icone-30.png'
 
 const linkGitHub = 'https://github.com/AlissonCDB';
 const linkLinkedin = 'https://www.linkedin.com/in/alisson-cunha-de-britto-715a52270/';

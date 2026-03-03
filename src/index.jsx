@@ -11,16 +11,17 @@ import { Projetos } from './rotas/Projetos';
 
 const GlobalStyle = createGlobalStyle`
   html {
-    background-color: black;
+    background-color: white;
     color: #cfb072;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
   }
 
   body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin: 0;
+    width: 100%:
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
@@ -28,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  ul {
+  html, body, ul {
     margin: 0;
     padding: 0;
   }
@@ -48,14 +49,12 @@ const App = () => {
     <React.StrictMode>
       <GlobalStyle />
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projetos" element={<Projetos />} />
+          <Route path="/skills" element={<Home />} />
+          <Route path="/projetos" element={<Home />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </React.StrictMode>
   );

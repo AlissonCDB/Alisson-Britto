@@ -5,8 +5,8 @@ import { MeuNome } from './MeuNome'
 import { OpcoesPaginas } from '../OpcoesPaginas'
 import { Contatos } from '../Contatos'
 
-import minhaFoto from '../../../public/imagens/Minha-foto.jpeg'
-import Logo from '../../../public/imagens/Logo.jpeg'
+import minhaFoto from '/imagens/Minha-foto.jpeg'
+import Logo from '/imagens/Logo.jpeg'
 
 const CabecalhoContainer = styled.header` 
     display: flex;

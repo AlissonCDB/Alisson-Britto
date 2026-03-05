@@ -9,7 +9,7 @@ import { OrbitingPlanet } from "../componentes/SistemaSolar/OrbitasPlanetas.jsx"
 import { NavigationMenu } from "../componentes/NavigationMenu/index.jsx";
 
 const linkGitHub = 'https://github.com/AlissonCDB';
-import githubIcone from '../../public/imagens/GitHub-icone-30.png'
+import githubIcone from '/imagens/GitHub-icone-30.png'
 
 const ContainerHome = styled.main`
   position: relative;
@@ -42,7 +42,7 @@ const RocketButton = styled.button`
 
 const AvisoOverlay = styled.div`
   display: flex;
-  align-items: flex-start; // Alinha no topo
+  align-items: center; // Alinha no topo
   justify-content: flex-start; // Alinha à esquerda
   width: 100vw;
   height: 100vh;
@@ -52,21 +52,25 @@ const AvisoOverlay = styled.div`
   top: 0;
   left: 0;
   z-index: 1001;
-  padding: 20px;
+  left: 20px;
+
+  @media (max-width: 480px) {
+    align-items: center;
+    justify-content: center;
+    left: 0;
 `;
 
 // Card do Aviso
 const Card = styled.div`
-  width: 90%;
-  max-width: 400px; // Limita o tamanho em telas grandes
-  padding: 25px;
+  width: 25%;
+  height: 90%;
   background: rgba(75, 129, 129, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   color: white;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   text-align: center;
-
+  
   h2 {
     margin-bottom: 15px;
     font-size: 1.5rem;
@@ -79,6 +83,12 @@ const Card = styled.div`
     margin-bottom: 20px;
     font-size: 0.95rem;
   }
+
+  @media (max-width: 480px) {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  margin: 0;
+  padding: 0;
 `;
 
 const LinkGitHub = styled.a`
@@ -130,13 +140,14 @@ export const Home = () => {
 
     return (
         <ContainerHome>
+            {/*            */}
             <AvisoOverlay>
                 <Card>
                     <h2>Aviso</h2>
                     <p>
                         Este portfólio está sendo atualizado, mas você já pode
                         conferir um pouco da nova temática e acompanhar o progresso. <br />
-                        Enquanto isso que tal, acompanhar um poquinho dos meus repositorios, 
+                        Enquanto isso que tal, acompanhar um poquinho dos meus repositorios,
                         logo logo os links para os projetos estarão disponíveis por aqui!
                         Recomendo a dar uma olhada no projeto <a href="https://github.com/AlissonCDB/group-leveling">Group Leveling</a>, meu TCC em desenvolvimento.
                     </p>
@@ -146,6 +157,7 @@ export const Home = () => {
                     </LinkGitHub>
                 </Card>
             </AvisoOverlay>
+
             <GlobalStyles />
             <StarBackground />
 

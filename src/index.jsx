@@ -8,6 +8,7 @@ import { Header } from './rotas/Header';
 import { Skills } from './rotas/Skills';
 import { Home } from './rotas/Home';
 import { Projetos } from './rotas/Projetos';
+import { SobreMim } from './rotas/SobreMim';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -54,6 +55,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/skills" element={<Home />} />
           <Route path="/projetos" element={<Home />} />
+          <Route path='/SobreMim' element={<SobreMim />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>

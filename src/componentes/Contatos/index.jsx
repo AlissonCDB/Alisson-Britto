@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import whatsappIcone from '../../../public/imagens/Whatsapp-icone-30.png'
-import emailIcone from '../../../public/imagens/Gmail-icone-30.png'
+import whatsappIcone from '/imagens/Whatsapp-icone-30.png'
+import emailIcone from '/imagens/Gmail-icone-30.png'
 
 const ContatosContainer = styled.ul`
     display: flex;

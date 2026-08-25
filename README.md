@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Meu Portfólio | Da Concepção à Maturidade
+"Não espere nada dos usuários, mas ao mesmo tempo espere tudo."
 
-## Getting Started
+Uma lição sobre produto, usabilidade e desenvolvimento que carrego desde as primeiras linhas deste código.
 
-First, run the development server:
+Sobre o Projeto
+Concebido originalmente em 2023, este portfólio representa o ponto de virada na minha trajetória como desenvolvedor. Foi o meu primeiro projeto autoral verdadeiramente elaborado — saindo do escopo guiado de cursos para enfrentar o ciclo completo de vida de um software: idealização, levantamento de requisitos, planejamento visual, implementação e testes com usuários reais.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Embora na época eu ainda não dominasse formalmente os conceitos avançados de IHC (Interação Humano-Computador) e UX/UI, o projeto nasceu da vontade de criar uma interface autêntica, intuitiva e focada na experiência de quem navega.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Lições de Engenharia e UX
+Durante os primeiros testes manuais com amigos, aprendi na prática a maior premissa do design centrado no usuário: o que é óbvio para quem constrói raramente é óbvio para quem consome. Observar pessoas interagindo com a interface mostrou que usuários exploram caminhos imprevistos e testam os limites da aplicação de formas nunca planejadas.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Tecnicamente, o projeto também foi um laboratório de persistência:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Resolução de problemas nativos: O desafio de fixar o cabeçalho/menu no topo durante a rolagem preservando o efeito de brilho (glow) das bordas exigiu ir além das abstrações do ecossistema e manipular eventos nativos do DOM da janela.
 
-## Learn More
+Foi aqui que compreendi que desenvolver software vai muito além da sintaxe — trata-se de transformar intenção em usabilidade estável.
 
-To learn more about Next.js, take a look at the following resources:
+Evolução da Arquitetura
+O portfólio acompanhou meu amadurecimento técnico ao longo do tempo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2023 (React.js puro): Nascimento da identidade visual e estrutura base de componentes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Migração para Vite: Otimização do ambiente de desenvolvimento e build tooling.
 
-## Deploy on Vercel
+Migração para Next.js (App Router + ISR): Para solucionar o custo de manutenção manual, a arquitetura foi modernizada para utilizar o próprio GitHub como um CMS Headless:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+As seções de Skills e Projetos consom diretamente os arquivos README.md dos meus repositórios via Server Components.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+O conteúdo é atualizado de forma centralizada a partir do GitHub, com cache inteligente de 24 horas via ISR (Incremental Static Regeneration) para otimizar requisições e consumo de infraestrutura na Vercel.
+
+Identidade Preservada
+Mesmo com o avanço dos meus estudos na faculdade e a maturidade adquirida no desenvolvimento full-stack e análise de dados, optei por preservar a estética e o design originais de 2023. Este projeto é um registro vivo de aprendizado contínuo, documentando a transição de um estudante autodidata para um desenvolvedor consciente de arquitetura, produto e usuário.

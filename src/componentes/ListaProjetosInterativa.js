@@ -20,6 +20,7 @@ const FiltrosContainer = styled.div`
     justify-content: center;
     margin-bottom: 25px;
     width: 100%;
+    
 `;
 
 const BotaoFiltro = styled.button`

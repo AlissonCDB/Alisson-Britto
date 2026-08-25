@@ -12,7 +12,6 @@ const SkillsContainer = styled.section`
     padding: 20px;
 
     .markdown-body {
-        width: 80%;
         max-width: 800px;
         line-height: 1.6;
         border-radius: 10px;
@@ -22,6 +21,10 @@ const SkillsContainer = styled.section`
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @media screen and (min-width: 468px) {
+            width: 80%;
+        }
 
         h1, h2, h3 {
             border-bottom: 1px solid #cfb072;
